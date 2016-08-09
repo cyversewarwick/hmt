@@ -104,6 +104,10 @@ The `universe.txt` file produced by `HMT_Index`. If you're supplying your own ge
 
 The p-value cutoff point for a result to be deemed significant. A complete listing of p-values, both significant and not, is returned in case it's of use.
 
+### Make Webapp
+
+If the box is checked, an interactive web browser of the raw p-value results will be produced. In the case of large searches, this will greatly slow down the generation of the results due to extensive parsing, with the standard outputs providing a focused list of relevant overrepresentations.
+
 ### Motif Annotation
 
 If desired, the output can be enhanced with extra information on the motifs used in the search, such as which transcription factors bind said motif. Optional input. If provided, it's to be a CSV file with no header (row/column names), with the first column being the motif ID that is to match the ones found in `fimo_found.txt`. The annotation will be ignored if any duplicate entries are identified or any of the `fimo_found.txt` motif IDs are not found, but it will not crash the app.
@@ -129,7 +133,7 @@ A comprehensive listing of all the significant overrepresentation instances, fea
 
 ### `html/`
 
-A folder containing an interactive webapp allowing the browsing of raw p-values. The cells can be shaded based on p-value thresholds, and individual overrepresentation p-values are clickable to reveal a list of genes in the gene group that had a given motif detected in their promoters.
+A folder containing an interactive webapp allowing the browsing of raw p-values. The cells can be shaded based on p-value thresholds, and individual overrepresentation p-values are clickable to reveal a list of genes in the gene group that had a given motif detected in their promoters. Only produced if the `Make Webapp` box is checked.
 
 ### `FullOutput.tar`
 
