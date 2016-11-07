@@ -285,6 +285,7 @@ def main():
 			for j in range(len(genes)):
 				writer4.write(strgroups[i]+'\t'+genes[j]+'\n')
 		for j in range(pvalues.shape[0]):
+			t0 = time.time()
 			line = list(mot_annot[j,:])
 			line.extend([str(item) for item in pvalues[j,:]])
 			writer1.write('\n'+'\t'.join(line))
