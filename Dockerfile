@@ -17,5 +17,9 @@ COPY scripts /scripts/
 
 MAINTAINER Krzysztof Polanski <k.t.polanski@warwick.ac.uk>
 
+#set up analysis crash text file
+RUN apt-get -y install git
+RUN git clone https://github.com/cyversewarwick/analysis_crash.git
+
 # set the entrypoint to the thing
 ENTRYPOINT ["bash", "/scripts/hmt_tarwrapper.sh"]
