@@ -14,7 +14,7 @@ The `HMT_Index` app creates the equivalent of a GO term annotation, using transc
 
 ## Test Run
 
-If you want to try out the indexing part of the hypergeometric motif test, the repeat-masked Arabidopsis genome FASTA file and TAIR10 GG3 annotation are provided in `ktpolanski/hmt_index_testdata` under Community Data along with a single MYB52 binding motif [(Franco-Zorrilla et al., 2014)][fz] in MEME formatting.
+If you want to try out the indexing part of the hypergeometric motif test, the repeat-masked Arabidopsis genome FASTA file and TAIR10 GG3 annotation are provided in `cyverseuk/hmt_index_testdata` under Community Data along with a single MYB52 binding motif [(Franco-Zorrilla et al., 2014)][fz] in MEME formatting.
 
 ## Input
 
@@ -28,7 +28,7 @@ The GFF3 annotation needs to be compatible with the provided genome, and is used
 
 ### GFF3 Gene ID Attribute
 
-A GFF3 file can carry a lot of information about an organism's genes, whilst the program is after the very basics - a distinct and discernible gene ID style that is also used in the input of gene groups for the second app, along with corresponding positioning. The GFF3 file is filtered to the lines that contain gene information, but the script subsequently needs information on which of the information fields to use as the identifier. For example, the Arabidopsis test data provided (`ktpolanski/hmt_index_testdata/annot.gff3` under Community Data) has the `gene_id=` field correspond to AGI identifiers, which are the widely accepted locus code nomenclature for Arabidopsis.
+A GFF3 file can carry a lot of information about an organism's genes, whilst the program is after the very basics - a distinct and discernible gene ID style that is also used in the input of gene groups for the second app, along with corresponding positioning. The GFF3 file is filtered to the lines that contain gene information, but the script subsequently needs information on which of the information fields to use as the identifier. For example, the Arabidopsis test data provided (`cyverseuk/hmt_index_testdata/annot.gff3` under Community Data) has the `gene_id=` field correspond to AGI identifiers, which are the widely accepted locus code nomenclature for Arabidopsis.
 
 ### Promoter Length
 
@@ -80,25 +80,25 @@ The algorithm itself is a very straightforward hypergeometric test - given a par
 
 ## Test Run
 
-If you want to get a feel for the output of the hypergeometric motif test tool, you'll find all the required files at `ktpolanski/hmt_testdata` under Community Data. The `fimo_found_200bp.txt` file is a motif hit file generated using the `HMT_index` app for a collection of multiple protein binding microarray-derived motifs for Arabidopsis transcription factors ([Franco-Zorrilla et al., 2014][], [Weirauch et al., 2014][weirauch]), while `input.txt` is a collection of 78 gene groups.
+If you want to get a feel for the output of the hypergeometric motif test tool, you'll find all the required files at `cyverseuk/hmt_testdata` under Community Data. The `fimo_found_200bp.txt` file is a motif hit file generated using the `HMT_index` app for a collection of multiple protein binding microarray-derived motifs for Arabidopsis transcription factors ([Franco-Zorrilla et al., 2014][], [Weirauch et al., 2014][weirauch]), while `input.txt` is a collection of 78 gene groups.
 
 ## Input
 
 ### Gene Group Input File
 
-A tab-delimited file with two columns, with the first column being the number of the gene group and the second column being a single gene ID in that gene group. For example, if you wanted to analyse two gene groups, with the first one containing 10 genes and the second one containing 15 genes, the input file would be 25 lines long, with 10 lines of gene group 1 IDs and 15 lines of gene group 2 IDs. Consult an example Arabidopsis file at `ktpolanski/hmt_testdata/input.txt` under Community Data.
+A tab-delimited file with two columns, with the first column being the number of the gene group and the second column being a single gene ID in that gene group. For example, if you wanted to analyse two gene groups, with the first one containing 10 genes and the second one containing 15 genes, the input file would be 25 lines long, with 10 lines of gene group 1 IDs and 15 lines of gene group 2 IDs. Consult an example Arabidopsis file at `cyverseuk/hmt_testdata/input.txt` under Community Data.
 
 ### Motif Hit File
 
-`fimo_found.txt`, as produced by `HMT_Index`. You can also supply your own motif hit file if so desired - the first column is to feature a motif name with the second column featuring the gene ID where the motif was sighted, with a tab delimiting them. An example Arabidopsis file can be found at `ktpolanski/hmt_testdata/fimo_found.txt` under Community Data.
+`fimo_found.txt`, as produced by `HMT_Index`. You can also supply your own motif hit file if so desired - the first column is to feature a motif name with the second column featuring the gene ID where the motif was sighted, with a tab delimiting them. An example Arabidopsis file can be found at `cyverseuk/hmt_testdata/fimo_found.txt` under Community Data.
 
 ### PWM Logos Folder
 
-The `logos` folder, as produced by `HMT_Index`. If you provide your own motifs, have this folder include a PNG PWM image for each motif, named with the motif named. An example Arabidopsis folder can be found at `ktpolanski/hmt_testdata/logos/` under Community Data.
+The `logos` folder, as produced by `HMT_Index`. If you provide your own motifs, have this folder include a PNG PWM image for each motif, named with the motif named. An example Arabidopsis folder can be found at `cyverseuk/hmt_testdata/logos/` under Community Data.
 
 ### Gene Universe
 
-The `universe.txt` file produced by `HMT_Index`. If you're supplying your own gene hit files, then create the universe as a collection of all the gene IDs in the organism, with one line per gene ID. An example Arabidopsis file can be found at `ktpolanski/hmt_testdata/universe.txt` under Community Data.
+The `universe.txt` file produced by `HMT_Index`. If you're supplying your own gene hit files, then create the universe as a collection of all the gene IDs in the organism, with one line per gene ID. An example Arabidopsis file can be found at `cyverseuk/hmt_testdata/universe.txt` under Community Data.
 
 ### Significance Threshold
 
@@ -110,7 +110,7 @@ If the box is checked, an interactive web browser of the raw p-value results wil
 
 ### Motif Annotation
 
-If desired, the output can be enhanced with extra information on the motifs used in the search, such as which transcription factors bind said motif. Optional input. If provided, it's to be a CSV file, with the first column being the motif ID that is to match the ones found in `fimo_found.txt`. The first row is to be a header briefly identifying the contents of each column. The annotation will be ignored if any duplicate entries are identified or any of the `fimo_found.txt` motif IDs are not found, but it will not crash the app. An example Arabidopsis file can be found at `ktpolanski/hmt_testdata/motif_annot.csv` under Community Data, but the design is flexible if you follow these guidelines.
+If desired, the output can be enhanced with extra information on the motifs used in the search, such as which transcription factors bind said motif. Optional input. If provided, it's to be a CSV file, with the first column being the motif ID that is to match the ones found in `fimo_found.txt`. The first row is to be a header briefly identifying the contents of each column. The annotation will be ignored if any duplicate entries are identified or any of the `fimo_found.txt` motif IDs are not found, but it will not crash the app. An example Arabidopsis file can be found at `cyverseuk/hmt_testdata/motif_annot.csv` under Community Data, but the design is flexible if you follow these guidelines.
 
 ## Output
 
